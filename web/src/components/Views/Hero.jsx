@@ -62,7 +62,6 @@ function Hero() {
 
   return (
     <div className="hero" id="hero">
-      <div className="xl:bg-[url('../assets/images/bg_images/bottom.png')] bg-no-repeat bg-bottom">
         <div className="nyxContainer bg-no-repeat bg-top mt-0 xl:mt-[0px]">
           <div>
             <div className="mt-[0px] sm:mt-[.0px] md:mt-[55px]">
@@ -199,7 +198,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="w-full">
+            <div className="w-full xl:bg-[url('../assets/images/bg_images/bottom.png')] bg-no-repeat bg-bottom">
               <div className="nyxNo border-b-0 pt-[8px] sm:pt-[11px] md:pt-[15px] lg:pt-[15px]">
                 <svg
                   className="ms-[15%] lg:ms-[17%] xl:ms-[19%] w-[70%] h-[70%] lg:w-[66px] lg:h-[48px]"
@@ -216,7 +215,6 @@ function Hero() {
             </div>
           </div>
         </div>
-      </div>
 
       <div className="nyxBorderTop">
         <div className="nyxContainer">
