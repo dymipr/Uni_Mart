@@ -1,65 +1,78 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const CipherText = ({ detail }) => {
-    const [isAnimation, setIsAnimation] = useState(false);
+  const [text, setText] = useState(detail.value);
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+  let interval = null;
 
-    useEffect(() => {
-        handleMouseOver();
-        setTimeout(() => {
-            handleMouseLeave();
-        }, 1000);
-    }, [])
+  useEffect(() => {
+    defaultAnimation();
+  }, [])
 
+  const defaultAnimation = () => {
+    let iteration = 0;
 
-    const randomAlphaNum = () => {
-        let rand;
-        do {
-            rand = Math.floor(Math.random() * 123); // Generate a random number between 0 and 122 (inclusive)
-        } while (!(rand >= 65 && rand <= 90) && !(rand >= 97 && rand <= 122)); // Keep generating until rand corresponds to uppercase or lowercase ASCII characters
+    clearInterval(interval);
 
-        return String.fromCharCode(rand);
-    };
+    interval = setInterval(() => {
+      setText((prevText) =>
+        prevText
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) {
+              return text[index];
+            }
 
-    const cipherStart = (text) => {
-        let i = 0;
-        const replace = /[^\s]/g;
-        return setInterval(() => {
-            setText(
-                text.substring(0, i) +
-                text.substring(i, text.length).replace(replace, randomAlphaNum)
-            );
-            i++;
-            if (i > text.length) clearInterval(timer);
-        }, 80);
-    };
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join("")
+      );
 
-    const [timer, setTimer] = useState(null);
-    const [text, setText] = useState(detail.value);
+      if (iteration >= text.length) {
+        clearInterval(interval);
+      }
 
-    const handleMouseOver = () => {
-        if (!isAnimation) {
-            setTimer(cipherStart(detail.value));
-            setIsAnimation(true);
-        }
-    };
+      iteration += 1 / 3;
+    }, 150);
+  };
 
-    const handleMouseLeave = () => {
-        if (isAnimation) {
-            clearInterval(timer);
-            setText(detail.value);
-            setIsAnimation(false);
-        }
-    };
+  const handleMouseOver = () => {
+    let iteration = 0;
 
-    return (
-        <span className='font-[monospace]'
-            style={{ color: 'white' }}
-            onMouseOver={handleMouseOver}
-            onMouseLeave={handleMouseLeave}
-        >
-            {text}
-        </span>
-    );
+    clearInterval(interval);
+
+    interval = setInterval(() => {
+      setText((prevText) =>
+        prevText
+          .split("")
+          .map((letter, index) => {
+            if (index < iteration) {
+              return text[index];
+            }
+
+            return letters[Math.floor(Math.random() * 26)];
+          })
+          .join("")
+      );
+
+      if (iteration >= text.length) {
+        clearInterval(interval);
+        setText(detail.value);
+      }
+
+      iteration += 1 / 3;
+    }, 30);
+  };
+
+  useEffect(() => {
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+      <span className="textAnimationButton py-0 xl:py-[20px]" onMouseOver={handleMouseOver}>
+        {text}
+      </span>
+  );
 };
 
 export default CipherText;
