@@ -18,7 +18,7 @@ function Historyview() {
             className="md:h-24 h-16 w-auto"
           />
           <h1 className="text-center text-xl font-semibold text-gray-100">
-            Connect your wallet
+            {wallet ? 'You have no staked $PAAL' : 'Connect your wallet'}
           </h1>
           {wallet ? (
             <button className="clipButton font-[Nippo] w-[170px] h-[40px] text-[15px]">
