@@ -4,12 +4,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/pages/home';
 import Staking from './components/pages/staking';
 
-export const CarContext = createContext(null);
-
 function App() {
 
   return (
-    <CarContext.Provider>
+    <>
       <BrowserRouter>
         <Routes>
           <Route path="/">
@@ -18,7 +16,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </CarContext.Provider>
+    </>
   );
 }
 
