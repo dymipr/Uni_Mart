@@ -1,49 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { init, useConnectWallet } from '@web3-onboard/react'
-import injectedModule from '@web3-onboard/injected-wallets'
 import "./buttons/button.css";
-
-const apiKey = '1730eff0-9d50-4382-a3fe-89f0d34a2070'
-const injected = injectedModule()
-const infuraKey = '<INFURA_KEY>'
-const rpcUrl = `https://mainnet.infura.io/v3/${infuraKey}`
 
 import { FiMenu } from "react-icons/fi";
 // import { MdOutlineRestaurantMenu } from "react-icons/md";
 import "./Navbar.css";
 import CipherText from "./buttons/CipherText";
 // import Button from "./buttons/clipButton";
-
-init({
-  apiKey,
-  wallets: [injected],
-  chains: [
-    {
-      id: '0x1',
-      token: 'ETH',
-      label: 'Ethereum Mainnet',
-      rpcUrl
-    },
-    {
-      id: 42161,
-      token: 'ARB-ETH',
-      label: 'Arbitrum One',
-      rpcUrl: 'https://rpc.ankr.com/arbitrum'
-    },
-    {
-      id: '0xa4ba',
-      token: 'ARB',
-      label: 'Arbitrum Nova',
-      rpcUrl: 'https://nova.arbitrum.io/rpc'
-    },
-    {
-      id: '0x2105',
-      token: 'ETH',
-      label: 'Base',
-      rpcUrl: 'https://mainnet.base.org'
-    }
-  ]
-})
 
 const Navbar = () => {
   
@@ -58,37 +20,6 @@ const Navbar = () => {
       });
     });
   }, []);
-
-  const [{ wallet, connecting }, connect, disconnect] = useConnectWallet();
-  const [connectedAddresses, setConnectedAddresses] = useState([]);
-
-  useEffect(() => {
-    if (wallet && wallet.accounts.length > 0) {
-      setConnectedAddresses(wallet.accounts.map(account => account.address));
-    } else {
-      setConnectedAddresses([]);
-    }
-
-    const handleAccountChange = (newAccounts) => {
-      setConnectedAddresses(newAccounts);
-    };
-
-    if (wallet) {
-      wallet.provider.on("accountsChanged", handleAccountChange);
-    }
-
-    return () => {
-      if (wallet) {
-        wallet.provider.off("accountsChanged", handleAccountChange);
-      }
-    };
-  }, [wallet]);
-
-  const handleDisconnect = async () => {
-    if (wallet) {
-      await disconnect(wallet);
-    }
-  };
 
   // const [toggle, setToggle] = useState(false);
   const [open, setOpen] = useState(null);
@@ -369,8 +300,8 @@ const Navbar = () => {
           </div>
           <div className="xl:flex lg:flex md:flex hidden w-[50%] xl:border-l-[0.5px] lg:border-l-[0.5px] border-[#747474aa] h-full items-center justify-center">
             {/* <Button detail={{ value: "Connect" }} /> */}
-            <button disabled={connecting} onClick={() => (wallet ? disconnect(wallet) : connect())} className="clipButton font-[Nippo]">
-              {connecting ? 'connecting' : wallet ? 'disconnect' : 'Connect'}
+            <button className="clipButton font-[Nippo]">
+              Connect
             </button>
           </div>
         </div>
@@ -500,8 +431,8 @@ const Navbar = () => {
                   onClick={() => handleOpen(false)}
                   className="animate-slideIn opacity-0 text-xl text-white hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-[4px] before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-gradient-to-r before:from-blue-400 before:to-green-500 before:absolute before:left-0 before:bottom-0"
                 >
-                  <button disabled={connecting} onClick={() => (wallet ? disconnect(wallet) : connect())} className="clipButton font-[Nippo]">
-                    {connecting ? 'connecting' : wallet ? 'disconnect' : 'Connect'}
+                  <button className="clipButton font-[Nippo]">
+                    Connect
                   </button>
                 </li>
               </ul>
