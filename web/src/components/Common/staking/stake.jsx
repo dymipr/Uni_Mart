@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useConnectWallet } from "@web3-onboard/react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Modal from "./modal";
 
 const Stake = ({ data }) => {
-  const [{ wallet, connecting }, connect] = useConnectWallet();
+  const [modalState, setModalState] = useState(false);
+  const [modalvalue, setModalValue] = useState('');
 
   return (
     <>
@@ -30,19 +32,45 @@ const Stake = ({ data }) => {
             <h1 className="text-gray-200">0 $PAAL/{data.progressbar}% </h1>
           </div>
         </div>
-        {wallet ? (
-          <button className="clipButton font-[Nippo] w-full min-h-[36px] text-[13px]">
-            Stake Now
-          </button>
-        ) : (
-          <button style={{'--border-width': '2.3px'}}
-            onClick={() => connect()}
-            className="clipButton font-[Nippo] w-full min-h-[36px] text-[13px]"
-          >
-            {connecting ? "connecting" : "Connect Wallet"}
-          </button>
-        )}
+        <ConnectButton.Custom>
+          {({
+            account,
+            chain,
+            openConnectModal,
+            authenticationStatus,
+            mounted,
+          }) => {
+            // Note: If your app doesn't use authentication, you
+            // can remove all 'authenticationStatus' checks
+            const ready = mounted && authenticationStatus !== "loading";
+            const connected =
+              ready &&
+              account &&
+              chain &&
+              (!authenticationStatus || authenticationStatus === "authenticated");
+  
+            return (
+              <div
+              >
+                {(() => {
+                  if (!connected) {
+                    return (
+                      <button className="w-full clipButton font-[Nippo] h-[40px] text-[15px]" onClick={openConnectModal} type="button">
+                        Connect Wallet
+                      </button>
+                    );
+                  }
+
+                  return (
+                    <button className="w-full clipButton font-[Nippo] h-[40px] text-[15px]" onClick={() => {setModalState(true), setModalValue(data.value)}}>Stake Now</button>
+                  );
+                })()}
+              </div>
+            );
+          }}
+        </ConnectButton.Custom>
       </div>
+      {modalState && <Modal setModalState={setModalState} value={modalvalue} />}
     </>
   );
 };

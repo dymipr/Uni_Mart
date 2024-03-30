@@ -1,8 +1,9 @@
-import React from "react";
-import { useConnectWallet } from "@web3-onboard/react";
+import React, { useState, useEffect } from "react";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import Modal from "./modal";
 
 function Historyview() {
-  const [{ wallet, connecting }, connect] = useConnectWallet();
+  const [modalState, setModalState] = useState(false);
   return (
     <div className="font-[RobotoMono] flex flex-col gap-5">
       <div>
@@ -18,22 +19,84 @@ function Historyview() {
             className="md:h-24 h-16 w-auto"
           />
           <h1 className="text-center text-xl font-semibold text-gray-100">
-            {wallet ? 'You have no staked $PAAL' : 'Connect your wallet'}
+            <ConnectButton.Custom>
+              {({
+                account,
+                chain,
+                openConnectModal,
+                authenticationStatus,
+                mounted,
+              }) => {
+                // Note: If your app doesn't use authentication, you
+                // can remove all 'authenticationStatus' checks
+                const ready = mounted && authenticationStatus !== "loading";
+                const connected =
+                  ready &&
+                  account &&
+                  chain &&
+                  (!authenticationStatus ||
+                    authenticationStatus === "authenticated");
+
+                return (
+                  <div>
+                    {(() => {
+                      if (!connected) {
+                        return "Connect your wallet";
+                      }
+
+                      return "You have no staked $PAAL";
+                    })()}
+                  </div>
+                );
+              }}
+            </ConnectButton.Custom>
           </h1>
-          {wallet ? (
-            <button className="clipButton font-[Nippo] w-[170px] h-[40px] text-[15px]">
-              Stake Now
-            </button>
-          ) : (
-            <button
-              onClick={() => connect()}
-              className="clipButton font-[Nippo] w-[170px] h-[40px] text-[15px]"
-            >
-              {connecting ? "connecting" : "Connect Wallet"}
-            </button>
-          )}
+          <ConnectButton.Custom>
+            {({
+              account,
+              chain,
+              openConnectModal,
+              authenticationStatus,
+              mounted,
+            }) => {
+              // Note: If your app doesn't use authentication, you
+              // can remove all 'authenticationStatus' checks
+              const ready = mounted && authenticationStatus !== "loading";
+              const connected =
+                ready &&
+                account &&
+                chain &&
+                (!authenticationStatus ||
+                  authenticationStatus === "authenticated");
+
+              return (
+                <div>
+                  {(() => {
+                    if (!connected) {
+                      return (
+                        <button
+                          className="w-[170px] clipButton font-[Nippo] h-[40px] text-[15px]"
+                          onClick={openConnectModal}
+                          type="button"
+                        >
+                          Connect Wallet
+                        </button>
+                      );
+                    }
+
+                    return (
+                      <button className="w-[170px] clipButton font-[Nippo] h-[40px] text-[15px]" onClick={() => setModalState(true)}>
+                        Stake Now
+                      </button>
+                    );
+                  })()}
+                </div>
+              );
+            }}
+          </ConnectButton.Custom>
         </div>
       </div>
+      {modalState && <Modal setModalState={setModalState} />}
     </div>
   );
 }
