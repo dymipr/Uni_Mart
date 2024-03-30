@@ -1,6 +1,12 @@
 import Stake from "./stake";
 import Historyview from "./historyView";
-import Connect from "../buttons/connectwallet";
+import ConnectWallet from "../buttons/connect_wallet";
+
+const stakes = [
+  { days: 14, nyxpercent: "1.20", percent: 3, progressbar: 3 },
+  { days: 28, nyxpercent: "6", percent: 10, progressbar: 5 },
+  { days: 56, nyxpercent: "92.8", percent: 15, progressbar: 10 },
+];
 
 function Dashboard() {
   return (
@@ -10,7 +16,7 @@ function Dashboard() {
           Staking
         </h1>
         <div className="flex items-center">
-          <Connect />
+          <ConnectWallet />
         </div>
       </div>
       <div className="flex flex-col w-full items-start gap-5">
@@ -24,30 +30,17 @@ function Dashboard() {
           </p>
         </div>
         <div className="grid lg:grid-cols-3 grid-cols-1 md:gap-10 gap-5 w-full ">
-          <Stake
-            data={{
-              days: 14,
-              nyxpercent: "1.20",
-              percent: 3,
-              progressbar: 3,
-            }}
-          />
-          <Stake
-            data={{
-              days: 28,
-              nyxpercent: "6",
-              percent: 10,
-              progressbar: 5,
-            }}
-          />
-          <Stake
-            data={{
-              days: 56,
-              nyxpercent: "92.8",
-              percent: 15,
-              progressbar: 10,
-            }}
-          />
+          {stakes.map((stake, index) => (
+            <Stake key={index}
+              data={{
+                days: stake.days,
+                nyxpercent: stake.nyxpercent,
+                percent: stake.percent,
+                progressbar: stake.progressbar,
+                value: index,
+              }}
+            />
+          ))}
         </div>
       </div>
       <Historyview />
