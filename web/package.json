@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@web3-onboard/injected-wallets": "^2.10.12",
-    "@web3-onboard/react": "^2.8.14",
+    "@rainbow-me/rainbowkit": "^2.0.4",
+    "@tanstack/react-query": "^5.28.4",
+    "buffer": "^6.0.3",
+    "viem": "^2.8.12",
+    "wagmi": "^2.5.11",
     "flowbite": "^2.3.0",
     "gsap": "^3.12.5",
     "preline": "^2.0.3",
