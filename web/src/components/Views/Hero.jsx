@@ -47,7 +47,7 @@ function Hero() {
     if (event.key === 'Enter') {
       updateText();
     }
-  };  
+  };
 
   const updateText = () => {
     if(inputText == 'binance.com' || inputText == 'bybit.com')
@@ -62,9 +62,9 @@ function Hero() {
 
   return (
     <div className="hero" id="hero">
-        <div className="nyxContainer bg-no-repeat bg-top mt-0 xl:mt-[0px]">
+        <div className="nyxContainer bg-no-repeat bg-top">
           <div>
-            <div className="mt-[0px] sm:mt-[.0px] md:mt-[55px]">
+            <div className="mt-0 md:mt-[2px]">
               <div className="xl:relative xl:border-[0.5px] border-[#747474aa]">
                 <div className="grid grid-cols-1 xl:grid-cols-2 z-[1]">
                   <div className="text-white pt-[32px] ps-[6px] sm:ps-[16px]" style={{ zIndex: '1' }}>
