@@ -35,71 +35,285 @@ function Advantage() {
 
         <div className="nyxBorderTop  bg-[#070C10] bg-[url('../assets/images/bg_images/rightLighting.png')] bg-no-repeat bg-right-top">
           <div className="gridLine xl:pt-[64px] lg:pt-[40px] md:pt-[24px] sm:pt-[12px] pt-[12px] xl:pb-[64px] lg:pb-[40px] md:pb-[24px] pb-[24px]">
-            <div className="2xl:mx-[155px] xl:mx-[120px] lg:mx-[95px] md:mx-[60px] sm:mx-[30px] mx-[6px] font-[RobotoMono]">
-              <div>
-                <p className="text-white font-medium md:text-[20px] sm:text-[15px] text-[15px]">
-                  {" "}
-                  <span className="bg-gradient-to-r from-[#5AB0FF] to-[#01FFC2] inline-block text-transparent bg-clip-text font-bold">
-                    _
-                  </span>{" "}
-                  Data Aggregation
-                </p>
-                <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[12px]">
-                  Nyx doesn't just analyze crypto data; he pioneers it,
-                  assessing multiple metrics to rate users and influencers. With
-                  unmatched bot detection skills and precise data verification,
-                  Nyx stands alone in his mastery.
-                </p>
+            <div className="2xl:mx-[155px] xl:mx-[120px] lg:mx-[95px] md:mx-[60px] sm:mx-[30px] mx-[6px] font-[RobotoMono] flex flex-col gap-12">
+              <div className="vibration col-span-2 xl:hidden fadeUpAnimation">
+                <div className="shape-container">
+                  <div className="shape-outer customize-outer">
+                    <div className="shape-inner customize-inner relative">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Data Aggregation
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Nyx doesn't just analyze crypto data; he pioneers it,
+                          assessing multiple metrics to rate users and
+                          influencers. With unmatched bot detection skills and
+                          precise data verification, Nyx stands alone in his
+                          mastery.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-right"
+                    src="./assets/images/nyxBorderBox/border-right.png"
+                  />
+                </div>
               </div>
 
-              <div className="md:mt-[42px] sm:mt-[32px] mt-[32px]">
-                <p className="text-white font-medium md:text-[20px] sm:text-[15px] text-[15px]">
-                  {" "}
-                  <span className="bg-gradient-to-r from-[#5AB0FF] to-[#01FFC2] inline-block text-transparent bg-clip-text font-bold">
-                    _
-                  </span>{" "}
-                  Process Data in Real Time
-                </p>
-                <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[12px]">
-                  Stay ahead of the curve with Nyx, who processes data
-                  instantly, detecting negative sentiments and analyzing content
-                  in the blink of an eye, even devouring lengthy Alex Becker
-                  videos moments after release.
-                </p>
+              <div className="vibration col-span-2 hidden xl:block fadeUpAnimation">
+                <div className="shape-container_44">
+                  <div className="shape-outer_44 customize-outer_44">
+                    <div className="shape-inner_44 customize-inner_44">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Data Aggregation
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Nyx doesn't just analyze crypto data; he pioneers it,
+                          assessing multiple metrics to rate users and
+                          influencers. With unmatched bot detection skills and
+                          precise data verification, Nyx stands alone in his
+                          mastery.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left_44"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right_44"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-top_44"
+                    src="./assets/images/nyxBorderBox/border-top.png"
+                  />
+                </div>
               </div>
 
-              <div className="md:mt-[42px] sm:mt-[32px] mt-[32px]">
-                <p className="text-white font-medium md:text-[20px] sm:text-[15px] text-[15px]">
-                  {" "}
-                  <span className="bg-gradient-to-r from-[#5AB0FF] to-[#01FFC2] inline-block text-transparent bg-clip-text font-bold">
-                    _
-                  </span>{" "}
-                  Simplifies Data
-                </p>
-                <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[12px]">
-                  Let Nyx be your guide through the labyrinth of crypto
-                  complexity. From decrypting encrypted data to simplifying
-                  intricate whitepapers and contracts, Nyx's expertise ensures
-                  that even the most complex information becomes accessible to
-                  all.
-                </p>
+              <div className="vibration col-span-2 xl:hidden fadeUpAnimation">
+                <div className="shape-container">
+                  <div className="shape-outer customize-outer">
+                    <div className="shape-inner customize-inner relative">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Process Data in Real Time
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Stay ahead of the curve with Nyx, who processes data
+                          instantly, detecting negative sentiments and analyzing
+                          content in the blink of an eye, even devouring lengthy
+                          Alex Becker videos moments after release.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-right"
+                    src="./assets/images/nyxBorderBox/border-right.png"
+                  />
+                </div>
               </div>
 
-              <div className="md:mt-[42px] sm:mt-[32px] mt-[32px]">
-                <p className="text-white font-medium md:text-[20px] sm:text-[15px] text-[15px]">
-                  {" "}
-                  <span className="bg-gradient-to-r from-[#5AB0FF] to-[#01FFC2] inline-block text-transparent bg-clip-text font-bold">
-                    _
-                  </span>{" "}
-                  Detect: Trends
-                </p>
-                <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[12px]">
-                  Nyx serves as your trusted navigator through the ever-shifting
-                  landscape of trends, spotting emerging patterns within
-                  minutes. With an unparalleled ability to distinguish genuine
-                  trends from artificial ones, Nyx empowers you to make
-                  decisions with unwavering confidence.
-                </p>
+              <div className="vibration col-span-2 hidden xl:block fadeUpAnimation">
+                <div className="shape-container_44">
+                  <div className="shape-outer_44 customize-outer_44">
+                    <div className="shape-inner_44 customize-inner_44">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Process Data in Real Time
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Stay ahead of the curve with Nyx, who processes data
+                          instantly, detecting negative sentiments and analyzing
+                          content in the blink of an eye, even devouring lengthy
+                          Alex Becker videos moments after release.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left_44"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right_44"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-top_44"
+                    src="./assets/images/nyxBorderBox/border-top.png"
+                  />
+                </div>
+              </div>
+
+              <div className="vibration col-span-2 xl:hidden fadeUpAnimation">
+                <div className="shape-container">
+                  <div className="shape-outer customize-outer">
+                    <div className="shape-inner customize-inner relative">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Simplifies Data
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Let Nyx be your guide through the labyrinth of crypto
+                          complexity. From decrypting encrypted data to
+                          simplifying intricate whitepapers and contracts, Nyx's
+                          expertise ensures that even the most complex
+                          information becomes accessible to all.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-right"
+                    src="./assets/images/nyxBorderBox/border-right.png"
+                  />
+                </div>
+              </div>
+
+              <div className="vibration col-span-2 hidden xl:block fadeUpAnimation">
+                <div className="shape-container_44">
+                  <div className="shape-outer_44 customize-outer_44">
+                    <div className="shape-inner_44 customize-inner_44">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Simplifies Data
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Let Nyx be your guide through the labyrinth of crypto
+                          complexity. From decrypting encrypted data to
+                          simplifying intricate whitepapers and contracts, Nyx's
+                          expertise ensures that even the most complex
+                          information becomes accessible to all.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left_44"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right_44"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-top_44"
+                    src="./assets/images/nyxBorderBox/border-top.png"
+                  />
+                </div>
+              </div>
+
+              <div className="vibration col-span-2 xl:hidden fadeUpAnimation">
+                <div className="shape-container">
+                  <div className="shape-outer customize-outer">
+                    <div className="shape-inner customize-inner relative">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Detect: Trends
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Nyx serves as your trusted navigator through the
+                          ever-shifting landscape of trends, spotting emerging
+                          patterns within minutes. With an unparalleled ability
+                          to distinguish genuine trends from artificial ones,
+                          Nyx empowers you to make decisions with unwavering
+                          confidence.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-right"
+                    src="./assets/images/nyxBorderBox/border-right.png"
+                  />
+                </div>
+              </div>
+
+              <div className="vibration col-span-2 hidden xl:block fadeUpAnimation">
+                <div className="shape-container_44">
+                  <div className="shape-outer_44 customize-outer_44">
+                    <div className="shape-inner_44 customize-inner_44">
+                      <div className="p-[50px]">
+                        <div className="box">
+                          <p className="text-white p-[12px] md:p-[15px] font-regular md:font-bold md:text-[25px] sm:text-[17px] text-[15px]">
+                            Detect: Trends
+                          </p>
+                        </div>
+                        <p className="text-[#EEEEEE] font-regular md:text-[18px] sm:text-[14px] text-[13px] line leading-normal mt-[18px]">
+                          Nyx serves as your trusted navigator through the
+                          ever-shifting landscape of trends, spotting emerging
+                          patterns within minutes. With an unparalleled ability
+                          to distinguish genuine trends from artificial ones,
+                          Nyx empowers you to make decisions with unwavering
+                          confidence.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    className="border-bottom-left_44"
+                    src="./assets/images/nyxBorderBox/border-bottom-left.png"
+                  />
+                  <img
+                    className="border-top-right_44"
+                    src="./assets/images/nyxBorderBox/border-top-right.png"
+                  />
+                  <img
+                    className="border-top_44"
+                    src="./assets/images/nyxBorderBox/border-top.png"
+                  />
+                </div>
               </div>
             </div>
           </div>
